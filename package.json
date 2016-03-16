@@ -7,10 +7,12 @@
     "gemini-gui": "./bin/gemini-gui"
   },
   "scripts": {
-    "build-client": "browserify lib/client --debug -p [minifyify --compressPath . --map /client.js.map.json --output ./lib/static/client.js.map.json] -t hbsfy -o ./lib/static/client.js",
+    "build-client": "webpack",
     "prepublish": "npm run build-client",
     "test": "istanbul test _mocha --require ./test/setup.js test/*",
-    "lint": "jshint . && jscs ."
+    "lint": "jshint . && jscs .",
+    "precommit": "npm run lint",
+    "preversion": "npm run lint && npm test"
   },
   "author": "Sergey Tatarintsev <sevinf@yandex-team.ru> (https://github.com/SevInf)",
   "license": "MIT",
@@ -27,17 +29,24 @@
     "opener": "^1.4.0",
     "q": "^1.0.1",
     "q-io": "^1.11.4",
+    "react": "^0.14.7",
+    "react-dom": "^0.14.7",
     "resolve": "^1.0.0",
     "semver": "^3.0.1",
     "temp": "^0.8.1"
   },
   "devDependencies": {
-    "browserify": "^5.11.1",
+    "babel-core": "^6.7.2",
+    "babel-loader": "^6.2.4",
+    "babel-preset-es2015": "^6.6.0",
+    "babel-preset-react": "^6.5.0",
     "chai": "^3.5.0",
     "chai-as-promised": "^5.2.0",
     "dirty-chai": "^1.2.2",
     "gemini": "^2.1.0",
+    "handlebars-loader": "^1.1.4",
     "hbsfy": "^2.1.0",
+    "husky": "^0.11.3",
     "istanbul": "^0.3.2",
     "jscs": "^1.6.2",
     "jshint": "^2.5.6",
@@ -46,7 +55,7 @@
     "proxyquire": "^1.7.3",
     "sinon": "^1.17.3",
     "sinon-chai": "^2.8.0",
-    "watchify": "^1.0.2"
+    "webpack": "^1.12.14"
   },
   "directories": {
     "test": "test"
