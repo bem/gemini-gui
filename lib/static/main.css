@@ -151,6 +151,11 @@ html, body {
     font: 12px Consolas, Monaco, monospace;
 }
 
+.stacktrace__browser {
+    color: red;
+    font-weight: bold;
+}
+
 .controls__item {
     padding: 5px;
     display: inline-block;
