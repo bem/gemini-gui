@@ -8,6 +8,7 @@
   },
   "scripts": {
     "build-client": "browserify lib/client --debug -p [minifyify --compressPath . --map /client.js.map.json --output ./lib/static/client.js.map.json] -t hbsfy -o ./lib/static/client.js",
+    "dev-build": "browserify lib/client --debug -t hbsfy -o ./lib/static/client.js",
     "prepublish": "npm run build-client",
     "test": "istanbul test _mocha --require ./test/setup.js test/*",
     "lint": "jshint . && jscs ."
