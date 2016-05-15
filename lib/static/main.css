@@ -101,6 +101,22 @@ html, body {
     color: #ccc;
 }
 
+.section__title-goto {
+    display: none;
+    position: absolute;
+    margin-left: 6px;
+    z-index: 2;
+}
+
+.section__title-goto-link {
+    font-weight: normal;
+    opacity: .6;
+}
+
+.section__title:hover .section__title-goto {
+    display: inline-block;
+}
+
 .section_status_queued > .section__title::before {
     color: #e7d700;
 }
