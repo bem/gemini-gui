@@ -1,7 +1,10 @@
 <div class="section section_collapsed"
      data-suite-path="{{suite.path}}"
      data-state-name="{{state.name}}">
-    <div class="section__title">{{state.name}}</div>
+    <div class="section__title">
+        <span class="section__title-text">{{state.name}}</span>
+        <button class="section__title-goto">Goto code »</button>
+    </div>
     <div class="section__body section__body_guided">
         {{#each browsers}}
         <div class="section section_collapsed"
