@@ -21,6 +21,7 @@
             <button id="collapseAll" class="button">Collapse all</button>
             <button id="expandErrors" class="button">Expand errors</button>
             <button id="runFailed" class="button button_togglable" disabled>Retry failed tests</button>
+            {{> show-browser }}
             {{#each suites}}
                 {{> suite}}
             {{/each}}
