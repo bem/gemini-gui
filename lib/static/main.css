@@ -191,6 +191,11 @@ html, body {
     overflow-x: scroll;
 }
 
+.stacktrace__browser {
+    color: red;
+    font-weight: bold;
+}
+
 .controls__item {
     padding: 5px;
     display: inline-block;
