@@ -75,7 +75,7 @@ describe('reporter', () => {
         this.app.currentPathToURL.withArgs('curr.png').returns('/curr/image.png');
 
         emitToReporter('endTest', {
-            suite: {id: 1, name: 'test'},
+            suite: {id: 1, name: 'test', file: '/file'},
             state: {name: 'state'},
             browserId: 'browser',
             sessionId: 'session',
@@ -85,10 +85,10 @@ describe('reporter', () => {
         }, this.app);
 
         assert.calledWith(this.app.sendClientEvent, 'endTest', {
-            suite: {id: 1, name: 'test'},
+            suite: {id: 1, name: 'test', file: '/file'},
             state: {
                 name: 'state',
-                metaInfo: {sessionId: 'session'}
+                metaInfo: {sessionId: 'session', file: '/file'}
             },
             browserId: 'browser',
             equal: true,
@@ -118,7 +118,7 @@ describe('reporter', () => {
         this.app.buildDiff.returns(Promise.resolve());
 
         emitToReporter('endTest', {
-            suite: {id: 1, name: 'test'},
+            suite: {id: 1, name: 'test', file: '/file'},
             state: {name: 'state'},
             browserId: 'browser',
             sessionId: 'session',
@@ -128,10 +128,10 @@ describe('reporter', () => {
         }, this.app);
 
         assert.calledWith(this.app.addFailedTest, {
-            suite: {id: 1, name: 'test'},
+            suite: {id: 1, name: 'test', file: '/file'},
             state: {
                 name: 'state',
-                metaInfo: {sessionId: 'session'}
+                metaInfo: {sessionId: 'session', file: '/file'}
             },
             browserId: 'browser',
             referencePath: 'ref.png',
@@ -145,7 +145,7 @@ describe('reporter', () => {
         this.app.buildDiff.returns(Promise.resolve('/diff/image.png'));
 
         emitToReporter('endTest', {
-            suite: {id: 1, name: 'test'},
+            suite: {id: 1, name: 'test', file: '/file'},
             state: {name: 'state'},
             browserId: 'browser',
             sessionId: 'session',
@@ -156,10 +156,10 @@ describe('reporter', () => {
 
         return Promise.resolve().then(() => {
             assert.calledWith(this.app.sendClientEvent, 'endTest', {
-                suite: {id: 1, name: 'test'},
+                suite: {id: 1, name: 'test', file: '/file'},
                 state: {
                     name: 'state',
-                    metaInfo: {sessionId: 'session'}
+                    metaInfo: {sessionId: 'session', file: '/file'}
                 },
                 browserId: 'browser',
                 equal: false,

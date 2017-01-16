@@ -191,6 +191,13 @@ html, body {
     overflow-x: scroll;
 }
 
+.controls {
+    background: #C9C9C9;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+}
+
 .controls__item {
     padding: 5px;
     display: inline-block;

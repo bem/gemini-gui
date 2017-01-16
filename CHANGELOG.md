@@ -1,5 +1,9 @@
 # Changelog
 
+## 4.6.0 - 2017-01-10
+
+* Add position sticky for controls. May be helpfull for big reference images
+
 ## 4.5.0 - 2016-11-02
 
 * Add ability to run sets specified in config
