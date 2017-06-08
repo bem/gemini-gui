@@ -94,11 +94,6 @@ html, body {
     font-weight: bold;
     cursor: pointer;
     display: block;
-
-    -moz-user-select: none;
-    -webkit-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
 }
 
 .section__title:before {
