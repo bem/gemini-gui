@@ -29,19 +29,15 @@ Web browser with `GUI` loaded will be opened automatically.
 
 ## Options
 
-* `--config`, `-c` - specify config file to use.
-* `--port`, `-p` - specify port to run `GUI` backend on.
-* `--hostname`, `-h` - specify hostname to run `GUI` backend on.
-* `--root-url`, `-r` - use specified URL, instead of `rootUrl` setting from config file.
-* `--grid-url` - use specified URL, instead of `gridUrl` setting from config file.
-* `--screenshots-dir`, `-s` - use specified directory, instead of `screenshotsDir` setting
-from config.
-* `--grep`, `-g` - find suites by name. Note that if some suite files specified search will be done
-only in that files.
-* `--debug` - enable debug mode (verbose logging).
-* `--auto-run`, `-a` - run gemini immediately (without pressing `run` button).
-* `--set`, `-s` - run set specified in config.
-* `--no-open`, `-O` - not to open a browser window after starting the server.
+* `-V`, `--version` – output the version number
+* `-b`, `--browser <browser>` – run test only in the specified browser
+* `-p`, `--port <port>` – port to launch server on
+* `-h`, `--hostname <hostname>` – hostname to launch server on
+* `-c, --config <file>` – gemini config file
+* `-g, --grep <pattern>` – run only suites matching the pattern
+* `-s`, `--set <set>` – set to run
+* `-a`, `--auto-run` – auto run immediately
+* `-O`, `--no-open` – not to open a browser window after starting the server
+* `-h`, `--help` – output usage information
 
-You can also override config file options with environment variables. Use `gemini`
-[documentation](https://github.com/gemini-testing/gemini#configuration) for details.
+Also you can override gemini config options via environment variables and CLI options. See gemini [documentation](https://github.com/gemini-testing/gemini#configuration) for details.
